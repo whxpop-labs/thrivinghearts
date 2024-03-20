@@ -1,0 +1,26 @@
+{
+	"name": "@doodley/root",
+	"version": "1.0.0",
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"postinstall": "preconstruct dev",
+		"build": "preconstruct build"
+	  },
+	"dependencies": {
+		"@babel/core": "^7.24.1",
+		"@babel/plugin-transform-runtime": "^7.24.1",
+		"@babel/preset-env": "^7.24.1",
+		"@babel/preset-react": "^7.24.1",
+		"@preconstruct/cli": "^2.8.3"
+	},
+	"preconstruct": {
+		"packages": [
+			"packages/*",
+			"apps/*",
+			"services/*"
+		]
+	}
+}
