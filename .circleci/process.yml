@@ -86,7 +86,7 @@ jobs:
         command: rm -f /tmp/node-project-lockfile /tmp/node-project-package.json /tmp/yarn-zero-lockfile
         name: Remove temporary links
     - run:
-        command: tsc
+        command: npx tsc
         name: Build TypeScript
     - run:
         name: Create the ~/artifacts directory if it doesn't exist
@@ -119,7 +119,7 @@ workflows:
 #       - node/install-packages:
 #           pkg-manager: yarn
 #       - run:
-#           command: tsc
+#           command: npx tsc
 #           name: Build TypeScript
 #       - run:
 #           name: Create the ~/artifacts directory if it doesn't exist
