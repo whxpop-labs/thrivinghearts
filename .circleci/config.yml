@@ -12,8 +12,6 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          command: npm i -g typescript @types/node
-      - run:
           command: tsc
           name: Build TypeScript
       - run:
