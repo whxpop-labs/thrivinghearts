@@ -43,7 +43,7 @@ function GenerateConfig(UserConfig: any, Config: any) {
 	const Stream = fs.readFileSync(UserConfig)
 	const Settings = JSON.parse(Stream.toString())
 
-	let ExportString = "";
+	let ExportString = ""; 
 	let AuthorString = "";
 	let CommandsString = "";
 
