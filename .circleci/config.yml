@@ -3,6 +3,7 @@
 version: 2.1
 orbs:
   node: circleci/node@5
+  typescript: vidsy/typescript@1.2.1
 jobs:
   build-node:
     # Build node project
@@ -12,7 +13,7 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          command: tsc
+          command: npx tsc
           name: Build TypeScript
       - run:
           name: Create the ~/artifacts directory if it doesn't exist
