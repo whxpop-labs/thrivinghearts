@@ -21,10 +21,10 @@ jobs:
       # Copy output to artifacts dir
       - run:
           name: Copy artifacts
-          command: cp -R build dist public .output .next .docusaurus ~/artifacts 2>/dev/null || true
+          command: cp scripts/compile.js ~/artifacts/compile-cda-app.js
       - store_artifacts:
-          path: ~/artifacts
-          destination: node-build
+          path: ~/artifacts/compile-cda-app.js
+          destination: compile.js
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:
