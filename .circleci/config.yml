@@ -4,11 +4,31 @@ version: 2.1
 orbs:
   node: circleci/node@5
   typescript: vidsy/typescript@1.2.1
+  slack: circleci/slack@4.1
 jobs:
-  build-node:
+  cda-compiler-build:
     # Build node project
     executor: node/default
     steps:
+      - slack/notify:
+          channel: doodley
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "selection",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*Doodley CDA Compiler*: Build Started.",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
+          thread_id: deployment
       - checkout
       - node/install-packages:
           pkg-manager: yarn
@@ -18,22 +38,70 @@ jobs:
       - run:
           name: Create the ~/artifacts directory if it doesn't exist
           command: mkdir -p ~/artifacts
+      - slack/notify:
+          channel: doodley
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "selection",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*Doodley CDA Compiler*: Build Finished.",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
+          thread_id: deployment
       # Copy output to artifacts dir
+      - slack/notify:
+          channel: doodley
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "selection",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*Doodley CDA Compiler*: Artifact Upload Started.",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
+          thread_id: deployment
       - run:
           name: Copy artifacts
           command: cp scripts/compile.js ~/artifacts/compile-cda-app.js
       - store_artifacts:
           path: ~/artifacts/compile-cda-app.js
           destination: compile.js
-  deploy:
-    # This is an example deploy job, not actually used by the workflow
-    docker:
-      - image: cimg/base:stable
-    steps:
-      # Replace this with steps to deploy to users
-      - run:
-          name: deploy
-          command: '#e.g. ./deploy.sh'
+      - slack/notify:
+          channel: doodley
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "selection",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*Doodley CDA Compiler*: Artifact Upload Finished.",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
+          thread_id: deployment
 workflows:
   build:
     jobs:
