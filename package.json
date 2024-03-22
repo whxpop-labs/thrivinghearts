@@ -6,15 +6,19 @@
 		"packages/*"
 	],
 	"scripts": {
-		"postinstall": "preconstruct dev",
-		"build": "preconstruct build"
-	  },
+		"postinstall": "",
+		"build": ""
+	},
 	"dependencies": {
 		"@babel/core": "^7.24.1",
 		"@babel/plugin-transform-runtime": "^7.24.1",
 		"@babel/preset-env": "^7.24.1",
 		"@babel/preset-react": "^7.24.1",
-		"@preconstruct/cli": "^2.8.3"
+		"@changesets/cli": "^2.27.1",
+		"@preconstruct/cli": "^2.8.3",
+		"@types/node": "^20.11.30",
+		"nodemon": "^3.1.0",
+		"ts-node": "^10.9.2"
 	},
 	"preconstruct": {
 		"packages": [

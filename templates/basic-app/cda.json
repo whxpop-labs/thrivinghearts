@@ -1,0 +1,27 @@
+{
+  "schema_version": "1",
+  "metadata": {
+    "url": "https://github.com/whxpop-labs/thrivinghearts/templates/basic-app/",
+    "authors": { "discord": ["@whxpop"], "github": ["whizbangpop", "whxpop-labs"], "other": [] },
+    "version": "0",
+    "license": "AGPL 3.0"
+  },
+  "commands": [
+    "npm i -g typescript ts-node @types/node nodemon",
+    "yarn install",
+    "tsc",
+    "node dist/welcome.js"
+  ],
+  "files": {
+    "config": [
+      "/tsconfig.json",
+      "/package.json",
+      "/doodley.conf",
+      "/package-lock.json"
+    ],
+    "code": {
+      "folders": ["/src", "/database"],
+      "files": []
+    }
+  }
+}
