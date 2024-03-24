@@ -2,3 +2,16 @@ SCHEMA 1
 
 #DoodleyScript - DO NOT MODIFY
 #Generated with CreateDoodleyApp compile script
+
+metadata.url: https://github.com/whxpop-labs/thrivinghearts/templates/basic-app/
+metadata.authors: Discord: @whxpop GitHub: whizbangpop GitHub: whxpop-labs 
+metadata.version: 0
+metadata.license: AGPL 3.0
+commands: npm i -g typescript ts-node @types/node nodemon && yarn install && tsc && node dist/welcome.js 
+file: basic-app/src/app.js
+file: basic-app/src/bd.hs
+file: test/rest.t.js]
+file: basic-app/src/test.js
+file: basic-app/database/bea,sjs.sql
+file: basic-app/database/db.sql
+file: basic-app/test/test.a

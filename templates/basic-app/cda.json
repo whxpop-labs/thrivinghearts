@@ -20,7 +20,7 @@
       "/package-lock.json"
     ],
     "code": {
-      "folders": ["/src", "/database"],
+      "folders": ["/src", "/database", "/test"],
       "files": []
     }
   }
