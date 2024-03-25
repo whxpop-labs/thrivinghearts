@@ -27,9 +27,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Build TypeScript
-      uses: alexthemaster/action-build-typescript@latest
+      uses: alexthemaster/action-build-typescript@v1.3.1
     - name: Create Release
-      uses: elgohr/Github-Release-Action@latest
+      uses: elgohr/Github-Release-Action@v5
       with:
         name: CDA Compiler
         workdir: dist
