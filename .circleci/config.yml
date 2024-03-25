@@ -76,7 +76,7 @@ jobs:
           event: always
       - run:
           name: Copy artifacts
-          command: cp scripts/cda-compiler/compile.js ~/artifacts/compile-cda-app.js
+          command: cp dist/compile.js ~/artifacts/compile-cda-app.js
       - store_artifacts:
           path: ~/artifacts/compile-cda-app.js
           destination: compile.js

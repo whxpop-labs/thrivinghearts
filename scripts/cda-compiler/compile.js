@@ -96,10 +96,10 @@ function GenerateConfig(UserConfig, Config) {
     });
     ConfigLineWriter(['commands'], CommandsString, Config);
     // Find folers and subfiles
-    // console.log(Settings.files.code.folders[0])
     Settings.files.code.folders.forEach((folder) => {
         const dirFiles = RecFind(path.join(execPath, folder));
     });
+    // Iterate through found files and write to config
     files.forEach((file) => {
         ConfigLineWriter(['file'], file, Config);
     });
@@ -121,11 +121,14 @@ function RecFind(folder) {
                     return;
                 if (array_of_dirs[i] !== BaseDir)
                     array_of_dirs.shift();
-                console.log(array_of_dirs.join("/"));
-                let FilePath1 = array_of_dirs.shift();
-                FilePath = array_of_dirs.join("/");
+                else {
+                    FoundBase = true;
+                    let FilePath1 = array_of_dirs.shift();
+                    FilePath = array_of_dirs.join("/");
+                    console.log(FilePath);
+                    files.push(path.join(FilePath, File.name));
+                }
             }
-            files.push(path.join(FilePath, File.name));
         }
     }
 }
@@ -143,7 +146,6 @@ function ConfigLineWriter(title, content, exportStream) {
             titleLine += `.${item}`;
     });
     Config.write(titleLine);
-    // return exportString += titleLine;
 }
 function CreateAuthorString(Settings) {
     let AuthorString = "";

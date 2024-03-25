@@ -75,8 +75,6 @@ function GenerateConfig(UserConfig: any, Config: fs.WriteStream) {
 	ConfigLineWriter(['metadata', 'version'], Settings.metadata.version, Config)
 	ConfigLineWriter(['metadata', 'license'], Settings.metadata.license, Config)
 
-
-
 	// Add commands
 	Settings.commands.forEach((cmd: string) => {
 		if (cmd === Settings.commands[0]) CommandsString += `${cmd} `
@@ -85,15 +83,16 @@ function GenerateConfig(UserConfig: any, Config: fs.WriteStream) {
 	ConfigLineWriter(['commands'], CommandsString, Config);
 
 	// Find folers and subfiles
-	// console.log(Settings.files.code.folders[0])
 	Settings.files.code.folders.forEach((folder: string) => {
 		const dirFiles = RecFind(path.join(execPath, folder));
-	})
-	files.forEach((file: string) => {
-		ConfigLineWriter(['file'], file, Config)
-	})
+	});
 
-	console.log(`✔ Compiled metadata to DoodleyScript`)
+	// Iterate through found files and write to config
+	files.forEach((file: string) => {
+		ConfigLineWriter(['file'], file, Config);
+	});
+
+	console.log(`✔ Compiled metadata to DoodleyScript`);
 }
 
 function RecFind(folder: string) {
@@ -108,12 +107,15 @@ function RecFind(folder: string) {
 			const len = array_of_dirs.length;
 			for (var i in array_of_dirs) {
 				if (FoundBase) return;
-				if (array_of_dirs[i] !== BaseDir) array_of_dirs.shift();
-				console.log(array_of_dirs.join("/"))
-				let FilePath1 = array_of_dirs.shift()
-				FilePath = array_of_dirs.join("/")
+				if (array_of_dirs[i] !== BaseDir) array_of_dirs.shift()
+				else {
+					FoundBase = true;
+					let FilePath1 = array_of_dirs.shift()
+					FilePath = array_of_dirs.join("/")
+					console.log(FilePath)
+					files.push(path.join(FilePath, File.name))
+				}
 			}
-			files.push(path.join(FilePath, File.name))
 		}
 	}
 }
@@ -129,7 +131,6 @@ function ConfigLineWriter(title: Array<string>, content: string, exportStream: f
 	});
 
 	Config.write(titleLine);
-	// return exportString += titleLine;
 }
 
 function CreateAuthorString(Settings: any): string {
