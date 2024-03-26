@@ -4,12 +4,18 @@ The official compiler for converting CDA (create-doodley-app) template configs i
 
 ## Installation
 
-> NPX is currently having issues with executing the script. We currently only support installing globally
-
 To install `cda-compile` simply run:
 
 ```bash
 npm install --global @doodley/cda-compile
+```
+
+OR
+
+`cda-compile` can be run using NPX. To do this run this command in the root of your template (with a valid CDA config):
+
+```bash
+npx @doodley/cda-compile@latest
 ```
 
 ## Usage
