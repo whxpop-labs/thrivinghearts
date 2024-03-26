@@ -1,0 +1,16 @@
+{
+  "name": "@doodley/cda-compile",
+  "version": "1.0.5",
+  "description": "The CDA script compiler",
+  "main": "build/index.js",
+  "private": false,
+  "scripts": {
+    "build": "tsc --build",
+    "prepublish": "npm run build",
+    "publish": "npm publish --access public"
+  },
+  "bin": {
+    "cda-compile": "./build/index.js"
+  },
+  "license": "ISC"
+}

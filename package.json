@@ -1,32 +1,23 @@
 {
-	"name": "@doodley/root",
+	"name": "doodley",
 	"version": "1.0.0",
+	"description": "A monorepo in TypeScript",
 	"private": true,
+	"scripts": {
+		"build": "tsc --build --verbose"
+	},
 	"workspaces": [
 		"packages/*"
 	],
-	"scripts": {
-		"postinstall": "",
-		"build": ""
-	},
 	"dependencies": {
-		"@babel/core": "^7.24.1",
-		"@babel/plugin-transform-runtime": "^7.24.1",
-		"@babel/preset-env": "^7.24.1",
-		"@babel/preset-react": "^7.24.1",
-		"@changesets/cli": "^2.27.1",
-		"@preconstruct/cli": "^2.8.3",
-		"@types/node": "^20.11.30",
-		"glob": "^10.3.10",
-		"nodemon": "^3.1.0",
-		"ts-node": "^10.9.2",
-		"typescript": "^5.4.3"
+		"@doodley/compile": "^1.0.0",
+		"eslint": "^8.57.0",
+		"prettier": "^3.2.5",
+		"typescript": "^5.4.3",
+		"typescript-eslint": "^7.4.0"
 	},
-	"preconstruct": {
-		"packages": [
-			"packages/*",
-			"apps/*",
-			"services/*"
-		]
+	"devDependencies": {
+		"@types/node": "^20.11.30",
+		"ts-node": "^10.9.2"
 	}
 }
