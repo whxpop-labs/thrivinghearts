@@ -12,5 +12,6 @@
   "bin": {
     "cda-compile": "./build/index.js"
   },
+  "repository": "https://github.com/whxpop-labs/thrivinghearts",
   "license": "ISC"
 }
