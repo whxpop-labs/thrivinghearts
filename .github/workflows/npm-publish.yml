@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 16
       - run: npm install -g typescript @types/node
-      - run: npm ci
+      - run: npm install
 
   publish-npm:
     needs: build
