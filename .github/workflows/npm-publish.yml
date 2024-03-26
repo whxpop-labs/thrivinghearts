@@ -28,8 +28,8 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: packages/cda-compile
-      - run: npm ci
+      - run: cd packages/cda-compile
+      - run: npm i -g typescript @types/node
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
