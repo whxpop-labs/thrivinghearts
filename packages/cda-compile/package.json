@@ -1,17 +1,20 @@
 {
   "name": "@doodley/cda-compile",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "The CDA script compiler",
   "main": "build/index.js",
   "private": false,
   "scripts": {
     "build": "tsc --build",
-    "prepublish": "npm run build",
-    "publish": "npm publish --access public"
+    "prepublish": "npm run build"
   },
   "bin": {
-    "cda-compile": "./build/index.js"
+    "cda-compile": "build/index.js"
   },
-  "repository": "https://github.com/whxpop-labs/thrivinghearts",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whxpop-labs/thrivinghearts.git"
+  },
+  "license": "ISC",
+  "files": ["./build/index.js", "./build/index.d.ts", "README.md"]
 }
