@@ -4,6 +4,10 @@ description: Examples of the JSON config and a matching DoodleyScript output.
 
 # 📖 Schema Example
 
+{% hint style="info" %}
+For DoodleyScript schema version 1.
+{% endhint %}
+
 ## CDA.json Example
 
 ```json
