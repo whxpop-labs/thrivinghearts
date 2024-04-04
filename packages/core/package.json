@@ -6,5 +6,8 @@
   "scripts": {
     "build": "tsc --build"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.14.1"
+  }
 }

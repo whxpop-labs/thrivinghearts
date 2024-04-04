@@ -115,7 +115,6 @@ function RecFind(folder) {
             let FilePath = "";
             let FoundBase = false;
             const array_of_dirs = folder.split("/");
-            const len = array_of_dirs.length;
             for (var i in array_of_dirs) {
                 if (FoundBase)
                     return;
@@ -123,7 +122,6 @@ function RecFind(folder) {
                     array_of_dirs.shift();
                 else {
                     FoundBase = true;
-                    let FilePath1 = array_of_dirs.shift();
                     FilePath = array_of_dirs.join("/");
                     files.push(path.join(FilePath, File.name));
                 }
