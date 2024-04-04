@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --build"
   },
-  "license": "ISC",
+  "license": "MPL-2.0",
   "dependencies": {
     "discord.js": "^14.14.1"
   }

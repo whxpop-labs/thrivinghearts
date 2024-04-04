@@ -15,6 +15,6 @@
     "type": "git",
     "url": "git+https://github.com/whxpop-labs/thrivinghearts.git"
   },
-  "license": "ISC",
+  "license": "MPL-2.0",
   "files": ["./build/index.js", "./build/index.d.ts", "README.md"]
 }
