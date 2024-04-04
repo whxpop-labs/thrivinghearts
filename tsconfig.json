@@ -20,6 +20,12 @@
     },
     {
       "path": "./packages/cda-compile"
+    },
+    {
+      "path": "./packages/create-doodley-app"
+    },
+    {
+      "path": "./packages/utils"
     }
   ]
 }

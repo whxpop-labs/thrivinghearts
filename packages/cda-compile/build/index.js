@@ -31,10 +31,7 @@ const execDir = fs.readdirSync(execPath);
 const regexp = process.argv[3] || "cda.json";
 const version = "1";
 var files = [];
-// console.log(execPath.split('/').reverse())
 let BaseDir = execPath.split("/").reverse()[0];
-let FoundBase = false;
-const dirName = execPath.split('/').splice(-1)[0];
 if (process.argv[2] === "-h" || process.argv[2] === '--help') {
     console.log(`CreateDoodleyApp - Automated Compiler\nVersion: ${version}\n\nComplier will search for a "cda.json" file in the execution directory. If your CDA config is in a different location or has a different name, specify this by using the "-f" flag.\n\nALL FLAGS\n-h/--help: Shows this help menu\n-v/--version: Shows the running schema/compiler version. Compiler version always matches schema version\n-f/--file: Specifies where the CDA config is`);
     process.exit();
@@ -47,7 +44,6 @@ if ((process.argv[2] === '-f' && !process.argv[3]) || (process.argv[2] === '--fi
     console.log('Please specify the file name and/or location of your CDA config.');
     process.exit();
 }
-// console.clear();
 console.log(`CreateDoodleyApp - Automated Compiler\nVersion: ${version}\n`);
 console.log(`Copyright whxpop labs 2024. Released under Mozilla Public Licence 2.\n\n`);
 function CheckIfConfigExists() {

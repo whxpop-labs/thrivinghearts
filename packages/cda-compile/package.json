@@ -1,6 +1,6 @@
 {
   "name": "@doodley/cda-compile",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "The CDA script compiler",
   "main": "build/index.js",
   "private": false,

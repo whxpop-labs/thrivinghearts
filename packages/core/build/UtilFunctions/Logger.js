@@ -12,6 +12,10 @@ function Log(info) {
             if (ConfigLoader_1.config.logLevel !== "debug")
                 return;
             console.log(`(debug 🐛) @${info.packageName}: ${info.message} `);
+        case "info":
+            if (ConfigLoader_1.config.logLevel !== "info")
+                return;
+            console.log(`(info ℹ️) @${info.packageName}: ${info.message} `);
     }
 }
-Log({ packageName: 'doodley/core', message: 'test', logLevel: "debug" });
+Log({ packageName: 'doodley/core', message: 'test', logLevel: "info" });

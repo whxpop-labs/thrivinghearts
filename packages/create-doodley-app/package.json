@@ -1,0 +1,20 @@
+{
+  "name": "@doodley/create-doodley-app",
+  "version": "0.1.0",
+  "description": "The app generator for the Doodley Project",
+  "main": "build/index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whxpop-labs/thrivinghearts.git"
+  },
+  "author": "whxpop labs",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/whxpop-labs/thrivinghearts/issues"
+  },
+  "homepage": "https://github.com/whxpop-labs/thrivinghearts#readme"
+}

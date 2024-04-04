@@ -80,11 +80,11 @@
     ws "^8.14.2"
 
 "@doodley/cda-compile@file:/workspace/thrivinghearts/packages/cda-compile":
-  version "1.0.8"
+  version "1.0.9"
   resolved "file:packages/cda-compile"
 
 "@doodley/compile@^1.0.0":
-  version "1.0.8"
+  version "1.0.9"
   resolved "file:packages/cda-compile"
 
 "@doodley/core@file:/workspace/thrivinghearts/packages/core":
@@ -92,6 +92,14 @@
   resolved "file:packages/core"
   dependencies:
     discord.js "^14.14.1"
+
+"@doodley/create-doodley-app@file:/workspace/thrivinghearts/packages/create-doodley-app":
+  version "0.1.0"
+  resolved "file:packages/create-doodley-app"
+
+"@doodley/utils@file:/workspace/thrivinghearts/packages/utils":
+  version "1.0.0"
+  resolved "file:packages/utils"
 
 "@eslint-community/eslint-utils@^4.2.0", "@eslint-community/eslint-utils@^4.4.0":
   version "4.4.0"

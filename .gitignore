@@ -2,3 +2,4 @@ node_modules/
 .next
 dist
 test_project/
+type_docs/

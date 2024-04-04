@@ -18,7 +18,7 @@ function Log(info: LogObject) {
 			if (config.logLevel !== "debug") return;
 			console.log(`(debug 🐛) @${info.packageName}: ${info.message} `);
 		case "info":
-			if (config.logLevel !== "info" || config.logLevel !== "debug") return;
+			if (config.logLevel !== "info") return;
 			console.log(`(info ℹ️) @${info.packageName}: ${info.message} `);
 	}
 
