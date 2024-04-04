@@ -20,7 +20,6 @@ function jsonConvert(msg: any): string {
     }
 }
 
-
 export module logger {
     /**
      * Logs a debug message.
