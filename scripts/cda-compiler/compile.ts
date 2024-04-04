@@ -6,12 +6,7 @@ const execDir    = fs.readdirSync(execPath);
 const regexp     = process.argv[3] || "cda.json";
 const version    = "1"; 
 var   files: any = [];
-
-// console.log(execPath.split('/').reverse())
 let   BaseDir    = execPath.split("/").reverse()[0];
-let   FoundBase  = false;
-console.log(BaseDir)
-const dirName    = execPath.split('/').splice(-1)[0];
 
 if (process.argv[2] === "-h" || process.argv[2] === '--help') {
 	console.log(`CreateDoodleyApp - Automated Compiler\nVersion: ${version}\n\nComplier will search for a "cda.json" file in the execution directory. If your CDA config is in a different location or has a different name, specify this by using the "-f" flag.\n\nALL FLAGS\n-h/--help: Shows this help menu\n-v/--version: Shows the running schema/compiler version. Compiler version always matches schema version\n-f/--file: Specifies where the CDA config is`);
@@ -28,7 +23,6 @@ if ((process.argv[2] === '-f' && !process.argv[3]) || (process.argv[2] === '--fi
 	process.exit();
 }
 
-// console.clear();
 console.log(`CreateDoodleyApp - Automated Compiler\nVersion: ${version}\n`);
 console.log(`Copyright whxpop labs 2024. Released under Mozilla Public Licence 2.\n\n`);
 
@@ -60,20 +54,18 @@ function CreateConfigFile() {
 }
 
 function GenerateConfig(UserConfig: any, Config: fs.WriteStream) {
-	const Stream = fs.readFileSync(UserConfig)
-	const Settings = JSON.parse(Stream.toString())
-
-	let ExportString = ""; 
-	let AuthorString = "";
+	const Stream = fs.readFileSync(UserConfig);
+	const Settings = JSON.parse(Stream.toString());
+	
 	let CommandsString = "";
 
 	if (!ConfigChecker(Settings)) {console.warn(`⨯ CDA config failed inspection. Unable to proceed.`); return};
 
 	// Add metadata
-	ConfigLineWriter(['metadata', 'url'], Settings.metadata.url, Config)
-	ConfigLineWriter(['metadata', 'authors'], CreateAuthorString(Settings), Config)
-	ConfigLineWriter(['metadata', 'version'], Settings.metadata.version, Config)
-	ConfigLineWriter(['metadata', 'license'], Settings.metadata.license, Config)
+	ConfigLineWriter(['metadata', 'url'], Settings.metadata.url, Config);
+	ConfigLineWriter(['metadata', 'authors'], CreateAuthorString(Settings), Config);
+	ConfigLineWriter(['metadata', 'version'], Settings.metadata.version, Config);
+	ConfigLineWriter(['metadata', 'license'], Settings.metadata.license, Config);
 
 	// Add commands
 	Settings.commands.forEach((cmd: string) => {
