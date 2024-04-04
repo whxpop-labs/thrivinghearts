@@ -1,0 +1,5 @@
+{
+	"scripts": {
+		"build-docs": " npx typedoc --entryPoints cda-compile/ --entryPoints create-doodley-app/ --entryPoints core/ --entryPoints utils/ --out ../type_docs/ --cname doodley-docs.whxpop.net --entryPointStrategy expand"
+	}
+}

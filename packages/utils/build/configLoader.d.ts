@@ -1,7 +1,7 @@
 /**
  * Configuration interface for the Discord gateway.
  */
-interface DiscordGatewayConfig {
+export interface DiscordGatewayConfig {
     /**
      * The authentication token for the Discord gateway.
      */
@@ -14,7 +14,7 @@ interface DiscordGatewayConfig {
 /**
  * Configuration interface for the Discord settings.
  */
-interface DiscordConfig {
+export interface DiscordConfig {
     /**
      * Configuration for the Discord gateway.
      */
