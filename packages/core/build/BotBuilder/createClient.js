@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateClient = void 0;
 const discord_js_1 = require("discord.js");
 const utils_1 = require("@doodley/utils");
-const logger = new utils_1.Logger('doodley/core/createclient', true);
+const logger = new utils_1.Logger('doodley/core/createclient', false);
 async function CreateClient(token, data) {
     let GatewayToken = token || utils_1.config.discord.gateway.token;
     let clientObject;
