@@ -2,7 +2,7 @@ import { Client } from "discord.js";
 import { config, Logger } from '@doodley/utils';
 import { ClientDataObject } from "./types";
 
-const logger = new Logger('doodley/core/createclient', true);
+const logger = new Logger('doodley/core/createclient', false);
 
 export async function CreateClient(token: string | undefined, data: ClientDataObject) {
 	let GatewayToken  = token || config.discord.gateway.token;
