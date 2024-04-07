@@ -1,6 +1,6 @@
 {
   "name": "@doodley/core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The core package of the DoodleyProject. Contains all the essential function to create a bot.",
   "main": "build/index.js",
   "scripts": {
