@@ -1,6 +1,6 @@
 {
   "name": "@doodley/create-doodley-app",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "The app generator for the Doodley Project",
   "main": "build/index.js",
   "devDependencies": {},
