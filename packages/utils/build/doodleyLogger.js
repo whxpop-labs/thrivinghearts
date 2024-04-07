@@ -6,59 +6,91 @@
  * @remarks This module provides logging functionalities.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.logger = void 0;
-const configLoader_1 = require("./configLoader");
-/**
- * Converts the given message to JSON format if it's an object.
- * @param msg The message to convert.
- * @returns The converted message.
- */
-function jsonConvert(msg) {
-    if (typeof msg === 'object') {
-        return JSON.stringify(msg);
+exports.Logger = void 0;
+class Logger {
+    packageName;
+    debugEnabled;
+    constructor(packageName, debugEnabled) {
+        this.packageName = packageName || "package";
+        this.debugEnabled = debugEnabled;
     }
-    else {
-        return msg.toString();
+    /**
+     * Converts the given message to JSON format if it's an object.
+     * @param msg The message to convert.
+     * @returns The converted message.
+     */
+    jsonConvert(msg) {
+        if (typeof msg === 'object') {
+            return JSON.stringify(msg);
+        }
+        else {
+            return msg.toString();
+        }
     }
-}
-var logger;
-(function (logger) {
     /**
      * Logs a debug message.
      * @param message The message to log.
-     * @param packageName The name of the package (optional).
      */
-    function debug(message, packageName) {
-        if (configLoader_1.config.logLevel !== "debug")
+    debug(message) {
+        if (!this.debugEnabled)
             return;
-        console.log(`(debug 🐛) @${packageName || "package"}: ${jsonConvert(message)} `);
+        console.log(`(debug 🐛) @${this.packageName || "package"}: ${this.jsonConvert(message)} `);
     }
-    logger.debug = debug;
     /**
      * Logs an info message.
      * @param message The message to log.
-     * @param packageName The name of the package (optional).
      */
-    function info(message, packageName) {
-        console.log(`(info ℹ️ ) @${packageName || "package"}: ${message} `);
+    info(message) {
+        console.log(`(info ℹ️ ) @${this.packageName || "package"}: ${this.jsonConvert(message)} `);
     }
-    logger.info = info;
     /**
      * Logs a warning message.
      * @param message The message to log.
-     * @param packageName The name of the package (optional).
      */
-    function warn(message, packageName) {
-        console.warn(`(warn ⚠️ ) @${packageName || "package"}: ${message} `);
+    warn(message) {
+        console.warn(`(warn ⚠️ ) @${this.packageName || "package"}: ${this.jsonConvert(message)} `);
     }
-    logger.warn = warn;
     /**
      * Logs an error message.
      * @param message The message to log.
-     * @param packageName The name of the package (optional).
      */
-    function error(message, packageName) {
-        console.error(`(error ❌) @${packageName || "package"}: ${message} `);
+    error(message) {
+        console.error(`(error ❌) @${this.packageName || "package"}: ${this.jsonConvert(message)} `);
     }
-    logger.error = error;
-})(logger || (exports.logger = logger = {}));
+}
+exports.Logger = Logger;
+// export module logger {
+//     /**
+//      * Logs a debug message.
+//      * @param message The message to log.
+//      * @param packageName The name of the package (optional).
+//      */
+//     export function debug(message: any, packageName?: string): void {
+//         if (config.logLevel !== "debug") return;
+//         console.log(`(debug 🐛) @${packageName || "package"}: ${jsonConvert(message)} `);
+//     }
+//     /**
+//      * Logs an info message.
+//      * @param message The message to log.
+//      * @param packageName The name of the package (optional).
+//      */
+//     export function info(message: string, packageName?: string): void {
+//         console.log(`(info ℹ️ ) @${packageName || "package"}: ${message} `);
+//     }
+//     /**
+//      * Logs a warning message.
+//      * @param message The message to log.
+//      * @param packageName The name of the package (optional).
+//      */
+//     export function warn(message: string, packageName?: string): void {
+//         console.warn(`(warn ⚠️ ) @${packageName || "package"}: ${message} `);
+//     }
+//     /**
+//      * Logs an error message.
+//      * @param message The message to log.
+//      * @param packageName The name of the package (optional).
+//      */
+//     export function error(message: string, packageName?: string): void {
+//         console.error(`(error ❌) @${packageName || "package"}: ${message} `);
+//     }
+// }

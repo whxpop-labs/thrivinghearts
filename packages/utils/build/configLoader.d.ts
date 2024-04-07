@@ -1,7 +1,7 @@
 /**
  * Configuration interface for the Discord gateway.
  */
-export interface DiscordGatewayConfig {
+interface DiscordGatewayConfig {
     /**
      * The authentication token for the Discord gateway.
      */
@@ -14,7 +14,7 @@ export interface DiscordGatewayConfig {
 /**
  * Configuration interface for the Discord settings.
  */
-export interface DiscordConfig {
+interface DiscordConfig {
     /**
      * Configuration for the Discord gateway.
      */
@@ -27,7 +27,7 @@ export interface DiscordConfig {
 /**
  * Top-level configuration interface for the application.
  */
-export interface AppConfig {
+interface AppConfig {
     /**
      * Configuration specific to Discord settings.
      */
@@ -48,3 +48,4 @@ declare function loadConfig(configFilePath?: string): AppConfig;
  */
 declare const config: AppConfig;
 export { loadConfig, config };
+export type { AppConfig, DiscordConfig, DiscordGatewayConfig };

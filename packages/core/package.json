@@ -8,6 +8,7 @@
   },
   "license": "MPL-2.0",
   "dependencies": {
+    "@doodley/utils": "^0.1.1",
     "discord.js": "^14.14.1"
   }
 }

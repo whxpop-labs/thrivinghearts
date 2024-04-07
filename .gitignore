@@ -3,3 +3,7 @@ node_modules/
 dist
 test_project/
 type_docs/
+packages/cda-compile/build
+packages/create-doodley-app/build
+packages/core/build
+packages/utils/build

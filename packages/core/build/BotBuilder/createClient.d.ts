@@ -1,2 +1,3 @@
-import type { IntentsBitField } from "discord.js";
-export declare function CreateClient(token: string | undefined, intents: Array<IntentsBitField>): void;
+import { Client } from "discord.js";
+import { ClientDataObject } from "./types";
+export declare function CreateClient(token: string | undefined, data: ClientDataObject): Promise<Client<boolean> | undefined>;
